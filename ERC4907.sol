@@ -29,7 +29,6 @@ contract ERC4907 is ERC721,IERC4907{
     }
 
     function setUser(uint256 _tokenId, address _user, uint64 _expires) public virtual override{
-        //require(_isApprovedOrOwner(msg.sender,_tokenId), "ERC4907: transfer caller is not owner nor approved");
         userInfo storage info =  rentUsers[_tokenId];
         info.userAddress = _user;
         info.expires = _expires+block.timestamp;
